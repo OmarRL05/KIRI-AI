@@ -1,0 +1,54 @@
+node_modules/
+.expo/
+dist/
+web-build/
+.env
+.env.*.local
+*.log
+.DS_Store
+ios/
+android/
+.impeccable/mocks/
+.impeccable/review/
+.env.local
+
+# Env / secrets
+.env*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.jks
+*.keystore
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+
+# Expo / React Native / build
+.expo-shared/
+web-build/
+build/
+*.tsbuildinfo
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.metro-health-check*
+Pods/
+*.orig.*
+
+# Supabase local
+supabase/.temp/
+supabase/.branches/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+coverage/
+
+# Local tool settings
+.claude/settings.local.json
+.impeccable/live/

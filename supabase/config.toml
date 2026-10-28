@@ -1,0 +1,8 @@
+project_id = "kiri"
+
+[auth]
+enable_anonymous_sign_ins = true
+enable_signup = true
+
+[functions.analyze-object]
+verify_jwt = true

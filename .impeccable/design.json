@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T23:18:00.000Z",
+  "title": "Design System: KIRI",
+  "extensions": {
+    "colorMeta": {
+      "electric-blue": {
+        "role": "primary",
+        "displayName": "Electric Signal Blue",
+        "canonical": "#2F6BFF",
+        "tonalRamp": ["#0B1D4D", "#122F7A", "#1B45B3", "#2558E0", "#2F6BFF", "#5C8BFF", "#94B4FF", "#DCE7FF"]
+      },
+      "ink-950": {
+        "role": "neutral",
+        "displayName": "Obsidian Canvas",
+        "canonical": "#0A0A0B",
+        "tonalRamp": ["#0A0A0B", "#18181B", "#27272A", "#3F3F46", "#52525B", "#71717A", "#A1A1AA", "#D4D4D8"]
+      },
+      "ink-50": {
+        "role": "neutral",
+        "displayName": "Paper Daylight",
+        "canonical": "#FAFAFA",
+        "tonalRamp": ["#18181B", "#27272A", "#52525B", "#71717A", "#A1A1AA", "#E4E4E7", "#F4F4F5", "#FAFAFA"]
+      },
+      "signal-red": {
+        "role": "error",
+        "displayName": "Destructive Coral",
+        "canonical": "#E5484D",
+        "tonalRamp": ["#3B0D0F", "#611619", "#8C1D22", "#B8262C", "#E5484D", "#EC7579", "#F4A8AA", "#FCE1E2"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Word (WordReveal)",
+        "purpose": "Recognized target-language object noun on Result, Detail, and Onboarding surfaces."
+      },
+      "headline": {
+        "displayName": "Screen Headline",
+        "purpose": "Top-level screen titles (Colección, Perfil)."
+      },
+      "title": {
+        "displayName": "Translation Title",
+        "purpose": "Native Spanish translation paired with IPA phonetic transcription."
+      },
+      "body": {
+        "displayName": "Example Sentence Body",
+        "purpose": "Contextual usage sentence and translation."
+      },
+      "label": {
+        "displayName": "Navigation & Section Label",
+        "purpose": "Tab bar items, filter pills, and profile section headings."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Baseline-masked word reveal, card entry, and toast transitions."
+      },
+      {
+        "name": "spring-press",
+        "value": "spring(damping: 18, stiffness: 420)",
+        "purpose": "Tactile scale-down (0.97) on buttons, shutter, and collection tiles."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "52pt electric blue CTA used exclusively for Guardar, Empezar, and Abrir cámara.",
+      "html": "<button class=\"ds-btn-primary\">Guardar</button>",
+      "css": ".ds-btn-primary { min-height: 52px; padding: 0 24px; border-radius: 16px; background: #2F6BFF; color: #FFFFFF; font-family: 'Geist', system-ui, sans-serif; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; border: none; cursor: pointer; transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease; } .ds-btn-primary:hover { opacity: 0.94; } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #2F6BFF; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Action Button (Escuchar)",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "52pt hairline outline button that highlights in #2F6BFF while pronouncing the word.",
+      "html": "<button class=\"ds-btn-ghost\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M11 5L6 9H2v6h4l5 4V5z\"/><path d=\"M15.5 8.5a5 5 0 0 1 0 7\"/><path d=\"M18.8 5.2a9.5 9.5 0 0 1 0 13.6\"/></svg><span>Escuchar</span></button>",
+      "css": ".ds-btn-ghost { min-height: 52px; padding: 0 20px; border-radius: 16px; background: transparent; color: #0A0A0B; border: 1px solid #E4E4E7; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; cursor: pointer; transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.18s ease, color 0.18s ease; } .ds-btn-ghost:hover { border-color: #2F6BFF; color: #2F6BFF; } .ds-btn-ghost:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Filter Pill Group",
+      "kind": "chip",
+      "refersTo": "filter-pill-active",
+      "description": "Monochrome inversion filter pills used in the Collection header (Todas, Nuevas, Aprendidas).",
+      "html": "<div class=\"ds-pills\"><button class=\"ds-pill ds-pill-on\">Todas</button><button class=\"ds-pill\">Nuevas</button><button class=\"ds-pill\">Aprendidas</button></div>",
+      "css": ".ds-pills { display: flex; gap: 8px; } .ds-pill { min-height: 44px; padding: 0 16px; border-radius: 999px; font-family: 'Geist', system-ui, sans-serif; font-size: 15px; font-weight: 500; border: 1px solid #E4E4E7; background: transparent; color: #0A0A0B; cursor: pointer; transition: transform 0.15s ease; } .ds-pill-on { background: #0A0A0B; border-color: #0A0A0B; color: #FAFAFA; } .ds-pill:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Collection Specimen Tile",
+      "kind": "card",
+      "refersTo": "specimen-card",
+      "description": "Vertical 3:3.66 framed photo card paired with the target word, 7pt new dot, and Spanish translation.",
+      "html": "<div class=\"ds-tile\"><div class=\"ds-tile-frame\"></div><div class=\"ds-tile-meta\"><div class=\"ds-tile-row\"><span class=\"ds-tile-word\">keyboard</span><span class=\"ds-tile-dot\"></span></div><span class=\"ds-tile-trans\">teclado</span></div></div>",
+      "css": ".ds-tile { width: 170px; display: flex; flex-direction: column; gap: 10px; font-family: 'Geist', system-ui, sans-serif; cursor: pointer; transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1); } .ds-tile:hover { transform: scale(0.985); } .ds-tile-frame { width: 170px; height: 207px; border-radius: 20px; background: radial-gradient(circle at 50% 40%, #E4E4E7 0%, #F4F4F5 100%); border: 1px solid #E4E4E7; } .ds-tile-meta { display: flex; flex-direction: column; gap: 2px; padding: 0 2px; } .ds-tile-row { display: flex; align-items: center; gap: 8px; } .ds-tile-word { font-size: 19px; font-weight: 600; color: #0A0A0B; letter-spacing: -0.4px; } .ds-tile-dot { width: 7px; height: 7px; border-radius: 999px; background: #2F6BFF; } .ds-tile-trans { font-size: 14px; font-weight: 500; color: #71717A; }"
+    },
+    {
+      "name": "Corner-Bracket Reticle",
+      "kind": "custom",
+      "refersTo": "specimen-card",
+      "description": "Centered SVG corner-bracket viewfinder guide that locks in #2F6BFF during vision analysis.",
+      "html": "<div class=\"ds-reticle-stage\"><svg width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" fill=\"none\"><path d=\"M 2 30 L 2 16 A 14 14 0 0 1 16 2 L 30 2 M 130 2 L 144 2 A 14 14 0 0 1 158 16 L 158 30 M 158 130 L 158 144 A 14 14 0 0 1 144 158 L 130 158 M 30 158 L 16 158 A 14 14 0 0 1 2 144 L 2 130\" stroke=\"#2F6BFF\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg></div>",
+      "css": ".ds-reticle-stage { width: 200px; height: 200px; border-radius: 24px; background: #0A0A0B; display: flex; align-items: center; justify-content: center; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Monochrome Specimen Room",
+    "overview": "KIRI treats every photographed everyday object as a quiet museum specimen. Because user-captured photographs bring every color of the real world into the viewport, the application chrome steps back into a disciplined ten-step neutral ink scale (#FAFAFA to #0A0A0B). The object photograph and the newly learned word share the stage alone: the camera is the home screen, the recognized word rises from a baseline mask in oversized display type, and saving places the photograph directly into a two-column (or three-column on tablet) personal collection.\n\nThe aesthetic rejects gamified language-app tropes—there are no mascots, streaks, XP counters, progress rings, or confetti bursts. Authority comes from typographic scale contrast, 1px hairline framing, spring-driven physics, and a single electric blue accent (#2F6BFF) reserved strictly for moments of action and recognition.",
+    "keyCharacteristics": [
+      "Camera-First Architecture: The live viewfinder with a subtle corner-bracket reticle (Reticle) is the default surface after one-time language selection.",
+      "Claim Beside Proof: Every vocabulary word is permanently paired with the photograph that earned it (ResultPanel, ObjectTile, ObjectDetail).",
+      "Two-Weight Typographic Discipline: Geist_600SemiBold carries display words, screen titles, and primary CTA labels; Geist_500Medium carries native translations, section headings, and navigation labels.",
+      "Restrained Single Accent: Electric Blue (#2F6BFF) appears in exactly four functional roles across the entire product."
+    ],
+    "rules": [
+      {
+        "name": "The Four-Place Accent Rule",
+        "body": "Electric Signal Blue (#2F6BFF) may appear in at most four functional states: reticle lock, primary CTA fill, unlearned specimen dot, and active audio ring. Never use it for decorative backgrounds, badges, tab bars, or headings.",
+        "section": "colors"
+      },
+      {
+        "name": "The Chromatic Silence Rule",
+        "body": "Because user photos supply unpredictable color, all structural chrome, filter chips (Todas, Nuevas, Aprendidas), and selected language pills use monochrome inversion (#0A0A0B fill with #FAFAFA text in light mode; #FAFAFA fill with #0A0A0B text in dark mode).",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Weight Ceiling Rule",
+        "body": "Never load or apply more than two explicit font weights (600 SemiBold and 500 Medium) alongside default regular body text (400). Hierarchy comes from size jump (52px display vs. 22px translation vs. 17px example) and ink contrast, never from weight sprawl.",
+        "section": "typography"
+      },
+      {
+        "name": "The Unclipped Descender Rule",
+        "body": "Every baseline-masked WordReveal container must allocate at least 1.24x mask height and 0.08x bottom padding relative to fontSize, and must cap scaling via maxFontSizeMultiplier rather than disabling accessibility font scaling.",
+        "section": "typography"
+      },
+      {
+        "name": "The Zero-Shadow Rule",
+        "body": "Never apply box-shadow or Android elevation to cards, buttons, or collection tiles. Separation between surfaces is achieved strictly via 1px hairline borders (#E4E4E7 light / #27272A dark) and the RadialGround luminance field.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do pair every vocabulary word with the user's captured photograph (ResultPanel, ObjectTile, ObjectDetail) so the image remains the visual proof of the word.",
+      "Do restrict #2F6BFF to the four committed states (reticle lock, primary CTA fill, unlearned tile dot, active audio ring) in both light and dark modes.",
+      "Do use RadialGround behind hero specimen cards (ResultPanel and ObjectDetail) to give the framed photograph subtle atmospheric separation without drop shadows.",
+      "Do adapt navigation to an 88px vertical left rail and constrain single-column detail/result stages to maxWidth: 560px on viewports >= 700px."
+    ],
+    "donts": [
+      "Don't introduce gamification chrome (streak flames, XP bars, coin counters, leaderboards, mascots, or confetti animations).",
+      "Don't add uppercase tracking kickers, category badges, or status pills inside collection grid tiles; only the 7pt #2F6BFF dot may appear beside the word.",
+      "Don't invert the primary CTA to a white fill in dark mode; keep #2F6BFF with #FFFFFF text so the accent contract holds across appearances.",
+      "Don't use allowFontScaling={false} on typography; always use maxFontSizeMultiplier with generous line-height and mask clearance."
+    ]
+  }
+}
